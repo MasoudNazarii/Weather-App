@@ -5,6 +5,7 @@ body {
     margin: 0;
     height: 100vh;
     background: rgb(233, 230, 230);
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
 }
 
 .card {
@@ -34,6 +35,7 @@ button {
     color: white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    font-size: 120%;
 }
   
 input.search-bar {
@@ -46,6 +48,7 @@ input.search-bar {
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 100px);
+    height: 30px;
 }
   
 button:hover {
