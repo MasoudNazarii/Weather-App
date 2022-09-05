@@ -1,5 +1,5 @@
 let weather = {
-    apiKey: "96f139d16081e456b4780f0b15e23f1f",
+    apiKey: "Your API Key",
     fetchWeather: function (city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey)
 
@@ -12,25 +12,20 @@ let weather = {
         const {temp, feels_like, humidity} = data.main
         const {speed} = data.wind
 
-        console.log(name, icon, description, temp, feels_like, humidity, speed)
-
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".icon").src ="https://openweathermap.org/img/wn/" + icon + ".png";
         document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
-        document.querySelector(".feels_like").innerText = "Feels like " + feels_like;
+        document.querySelector(".temp").innerText = Math.round(temp) + "°C";
+        document.querySelector(".feels_like").innerText = "Feels like " + Math.round(feels_like) + " °C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText = "Wind speed: " + speed + "km/h";
+        document.querySelector(".wind").innerText = "Wind speed: " + Math.round(speed) + " km/h";
 
         document.querySelector(".weather").classList.remove("loading")
-
-        document.body.style.backgroundImage = "url('https://source.unsplash.com/1600x900/?" + name + "')"
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
     }
 };
-
         document.querySelector(".search button")
         .addEventListener("click", function () {
             weather.search();
@@ -42,6 +37,3 @@ let weather = {
                 weather.search();
             }
         });
-
-
-
