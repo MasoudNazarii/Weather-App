@@ -4,13 +4,13 @@ body {
     visibility: hidden;
 }
 
-/*     background animation       */
+/* ------------background animation------------------ */
 .gradient {
     background-color: black;
     width: 40vw;
     height: 20vw;
     background-size: 400% 400%;
-    background-image: linear-gradient(-45deg, #ee7652b0, #e73c7eb0, #9581f4b0, #23a6d5b0, #23d5abb0);
+    background-image: linear-gradient(-45deg, #ee7652, #e73c7e, #9581f4, #23a6d5, #23d5ab);
     animation: gradient 200s ease infinite;
     backdrop-filter: blur(15rem);
 }
@@ -27,17 +27,14 @@ body {
     }
 }
 
-.dark {
-	background: #1616168f;
-}
-
+/* ---------------Change Theme Button--------------------- */
 .checkbox {
 	opacity: 0;
 	position: absolute;
 }
 
 .label {
-	background-color: rgba(10, 10, 10, 0.363);
+	background-color: #4949492b;
 	border-radius: 50px;
 	cursor: pointer;
 	display: flex;
@@ -48,6 +45,7 @@ body {
 	height: 10px;
 	width: 30px;
 	transform: scale(1.5);
+    float: right;
 }
 
 .label .ball {
@@ -67,18 +65,19 @@ body {
 }
 
 .moon {
-	color: #f1c40f;
+	color: black;
     position: absolute;
     right: 1px;
     
 }
 
 .sun {
-	color: #f39c12;
+	color: black;
     left: 2px;
     position: absolute;
 }
 
+/*-------------------Main Weather Info Search bar ---------------------------*/
 .card {
     position: relative;
     background-color:  #fffefe8f;
@@ -97,6 +96,8 @@ body {
     backdrop-filter: blur(15rem);
     line-height: 40px;
 }
+
+/*-------------Search bar------------------*/
 .search {
     display: flex;
     align-items: center;
@@ -117,7 +118,6 @@ body {
     font-size: 120%;
 }
 
-
 input.search-bar {
     border: none;
     outline: none;
@@ -130,14 +130,31 @@ input.search-bar {
     width: calc(100% - 100px);
     height: 30px;
 }
-::placeholder {
+.search-bar::placeholder {
     color: black;
 }
   
 .search-button:hover {
     background: #7c7c7c6b;
 }
+
+/*-----------Loading----------------*/
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
   
+.weather.loading:after {
+    visibility: visible;
+    content: "Pleas enter the location you want to know it's weather. :)";
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    text-align: center;
+}
+  
+/*--------------Temperature---------------------*/
 h1.temp {
     margin: 0;
     margin-bottom: 0.4em;
@@ -161,21 +178,8 @@ h1.temp {
     margin-left: 8px;
 }
   
-.weather.loading {
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
-}
-  
-.weather.loading:after {
-    visibility: visible;
-    content: "Pleas enter the location you want to know it's weather. :)";
-    color: black;
-    position: absolute;
-    top: 0;
-    text-align: center;
-}
 
+/*--------Icons---------*/
 .drop-icon {
     position: absolute;
     top: 70.5%;
