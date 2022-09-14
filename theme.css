@@ -1,0 +1,45 @@
+/* ------------Dark Mode----------------- */
+
+.gradient.gradient-dark {
+    background-image: linear-gradient(-45deg, #ee7652b0, #e73c7eb0, #9581f4b0, #23a6d5b0, #23d5abb0);
+}
+
+.label.label-dark {
+    background-color: rgba(151, 147, 147, 0.363);
+}
+
+.moon.moon-sun-dark {
+    color: white;
+}
+
+.sun.moon-sun-dark {
+    color: white;
+}
+
+.card.card-dark {
+    background: #1616168f;
+    color: white;
+}
+
+.search-button.search-button-dark {
+    background: #aaaaaa2b;
+    color: white;
+}
+
+.search-bar.search-bar-dark {
+    background: #aaaaaa2b;
+    color: white;
+}
+
+.search-button.search-hover-dark:hover {
+    background: #5351516b;
+}
+.search-bar.placeholder-dark::placeholder {
+    color: white;
+}
+
+.loading.loading-dark::after {
+    color: white;
+}
+
+
