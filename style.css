@@ -94,7 +94,7 @@ body {
     left: 70%;
     visibility: visible;
     backdrop-filter: blur(15rem);
-    line-height: 40px;
+    line-height: 35px;
 }
 
 /*-------------Search bar------------------*/
@@ -178,16 +178,99 @@ h1.temp {
     margin-left: 8px;
 }
   
-
 /*--------Icons---------*/
+.div-table {
+    display: table;
+    height: 100%;
+}
+
+.div-row {
+    display: table-row;
+}
+
 .drop-icon {
-    position: absolute;
-    top: 70.5%;
-    left: 25.5%;
+    top: 2px;
+    position: relative;
 }
 
 .wind-icon {
-    position: absolute;
-    top: 82.5%;
-    left: 33%;
+    top: 5px;
+    position: relative;
 }
+
+.drop-icon, .humidity {
+    display: table-cell;   
+    padding-right: 5px;
+    
+}
+
+.wind-icon, .wind {
+    display: table-cell;
+    padding-right: 5px;
+}
+
+/*    Navigation for more info      *//*
+nav {
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.moreinfo-nav {
+    cursor: pointer;
+}
+
+.backdrop-container {
+    display: none;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-animation: fadeIn 1.2 ease-in-out;
+    animation: fadeIn 1.2 ease-in-out;
+}
+
+.sidenav-container {
+    height: 100%;
+    width: 0;
+    position: relative;
+    z-index: 3;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidenav-container a {
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+    margin: 10px 0;
+}
+
+.sidenav-container a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav-container .closebtn {
+    color: #C9002B;
+    padding-right: 1rem;
+}
+
+.sidenav-container .drawe-close-button {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+*/

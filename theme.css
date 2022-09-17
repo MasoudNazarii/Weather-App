@@ -34,6 +34,7 @@
 .search-button.search-hover-dark:hover {
     background: #5351516b;
 }
+
 .search-bar.placeholder-dark::placeholder {
     color: white;
 }
@@ -41,5 +42,3 @@
 .loading.loading-dark::after {
     color: white;
 }
-
-
