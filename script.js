@@ -86,7 +86,22 @@ checkbox.addEventListener("click", function() {
     placeholder.classList.toggle("placeholder-dark");
 });
 
+//more info
+function openNav() {
+    //opens side navbar by 70%
+    document.getElementById("side-nav").style.width = "70%"
 
+    //opens ovelay display
+    document.getElementById('backdrop').style.display = "block"
+}
+
+function closeNav() {
+    //closes side navbar totally
+    document.getElementById("mysidenav").style.width = "0"
+
+    //removes overlay display
+    document.getElementById('backdrop').style.display = "none"
+}
 
 
 
