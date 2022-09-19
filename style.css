@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+    display: none;
+}
 body {
     margin: 0;
     font-family: 'Roboto Mono', monospace;
@@ -209,10 +212,10 @@ h1.temp {
     padding-right: 5px;
 }
 
-/*    Navigation for more info      *//*
+/*    Navigation for more info      */
 nav {
     width: 100%;
-    height: 10vh;
+    height: 1vh;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -227,41 +230,42 @@ nav {
     position: relative;
     z-index: 2;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.473);
     -webkit-animation: fadeIn 1.2 ease-in-out;
     animation: fadeIn 1.2 ease-in-out;
+    border-radius: 1.5rem;
+    top: 43px;
+    left: 50px;
+    justify-content: center;
 }
 
 .sidenav-container {
     height: 100%;
-    width: 0;
+    width: 100%;
     position: relative;
     z-index: 3;
-    background-color: #111;
-    overflow-x: hidden;
+    background-color: rgba(17, 17, 17, 0.473);
     transition: 0.5s;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    border-radius: 1.5rem;
+    margin: 0;
 }
 
-.sidenav-container a {
+.backdrop-container a {
     text-decoration: none;
     display: block;
     transition: 0.3s;
     margin: 10px 0;
 }
 
-.sidenav-container a:hover {
-    color: #f1f1f1;
+.backdrop-container a:hover {
+    color: #C9002B;
+    font-family: 'Roboto Mono', monospace;
 }
 
-.sidenav-container .closebtn {
-    color: #C9002B;
+.backdrop-container .closebtn {
+    color: white;
     padding-right: 1rem;
 }
 
@@ -273,4 +277,3 @@ nav {
     align-items: center;
     margin-bottom: 3rem;
 }
-*/
