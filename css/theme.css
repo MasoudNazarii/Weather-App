@@ -44,10 +44,11 @@
 }
 
 .backdrop-container.backdrop-container-dark {
-    background-color: #1616168f;
+    background-color: #16161600;
     color: white;
 }
 
 .closebtn.closebtn-dark {
     color: white;
 }
+

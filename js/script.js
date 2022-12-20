@@ -33,25 +33,13 @@ let weather = {
         document.querySelector(".feels_like").innerText = "Feels like " + Math.round(feels_like) + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + Math.round(speed) + "km/h";
-        document.querySelector(".sunrise").innerText = "Sunrise time: " + Sunrise.toUTCString();
-        document.querySelector(".sunset").innerText = "Sunset time: " + Sunset.toUTCString();
-        
         
         document.querySelector(".weather").classList.remove("loading")
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
     },
-    /* 
-    skycon: function setIcons(data, iconID) {
-        const {description} = data.weather[0]
-        const skycons = new Skycons({"color": "white"});
-        const currentIcon = description.replace(/ /g, "_").toUpperCase();
-        skycons.play();
-        skycons.set(iconID, Skycons[currentIcon]);
-        skycons.add(document.getElementById(".icon"));
-    },
-    */
+    
 };
 
 document.querySelector(".search button").addEventListener("click", function () {
@@ -96,16 +84,6 @@ checkbox.addEventListener("click", function() {
 });
 
 
-//more info
-function openNav() {
-    //opens ovelay display
-    document.getElementById('backdrop').style.display = "block"
-}
-
-function closeNav() {
-    //removes overlay display
-    document.getElementById('backdrop').style.display = "none"
-}
 
 
 
