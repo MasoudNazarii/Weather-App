@@ -9,26 +9,26 @@
 }
 
 .moon.moon-sun-dark {
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .sun.moon-sun-dark {
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
-.card.card-dark {
+.main-card.main-card-dark {
     background: #1616168f;
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .search-button.search-button-dark {
     background: #aaaaaa2b;
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .search-bar.search-bar-dark {
     background: #aaaaaa2b;
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .search-button.search-hover-dark:hover {
@@ -36,19 +36,24 @@
 }
 
 .search-bar.placeholder-dark::placeholder {
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .loading.loading-dark::after {
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .backdrop-container.backdrop-container-dark {
     background-color: #16161600;
-    color: white;
+    color: rgb(211, 211, 211);
 }
 
 .closebtn.closebtn-dark {
-    color: white;
+    color: rgb(211, 211, 211);
 }
+
+.card.card-dark {
+    background-color: #161616fa;
+}
+
 
