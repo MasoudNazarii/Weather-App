@@ -1,18 +1,21 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+*, ::after, ::before {
+    box-sizing: unset;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto Mono', monospace;
-    visibility: hidden;
     height: 100vh;
+    position: relative;
 }
 
 /* ------------background animation------------------ */
 .gradient {
     background-color: black;
-    width: 40vw;
-    height: 20vw;
     background-size: 400% 400%;
     background-image: linear-gradient(-45deg, #ee7652, #e73c7e, #9581f4, #23a6d5, #23d5ab);
     animation: gradient 200s ease infinite;
@@ -69,35 +72,36 @@ body {
 }
 
 .moon {
-	color: black;
+	color: rgb(44, 44, 44);
     position: absolute;
     right: 1px;
     
 }
 
 .sun {
-	color: black;
+	color: rgb(44, 44, 44);
     left: 2px;
     position: absolute;
 }
 
 /*-------------------Main Weather Info Search bar ---------------------------*/
-.card {
-    position: relative;
-    background-color:  #fffefe8f;
+.main-card {
+    position: absolute;
+    background-color: #fffefe8f;
     transition: background-color.3s;
     padding: 1.5em;
     border-radius: 10px;
     width: 100%;
     max-width: 650px;
+    max-height: 350px;
     height: 100%;
-    margin: 1em;
-    color: black;
-    top: 40%;
-    left: 70%;
+    margin: 0 auto;
+    color: rgb(43, 43, 43);
     visibility: visible;
     backdrop-filter: blur(15rem);
     line-height: 35px;
+    top: 15%;
+    left: 25%;
 }
 
 /*-------------Search bar------------------*/
@@ -108,17 +112,18 @@ body {
 }
   
 .search-button {
-    margin: 0.5em;
+    margin: 10px;
+    padding: 2px;
     border-radius: 50%;
     border: none;
-    height: 44px;
-    width: 44px;
+    height: 40px;
+    width: 40px;
     outline: none;
     background: #4949492b;
-    color: black;
+    color: rgb(43, 43, 43);
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 input.search-bar {
@@ -127,14 +132,14 @@ input.search-bar {
     padding: 0.4em 1em;
     border-radius: 24px;
     background: #7c7c7c2b;
-    color: black;
+    color: rgb(46, 44, 44);
     font-family: inherit;
     font-size: 105%;
     width: calc(100% - 100px);
-    height: 30px;
+    height: 25px;
 }
 .search-bar::placeholder {
-    color: black;
+    color: rgb(46, 46, 46);
 }
   
 .search-button:hover {
@@ -147,14 +152,13 @@ input.search-bar {
     max-height: 20px;
     position: relative;
 }
-  
-.weather.loading:after {
+
+.weather.loading::after {
     visibility: visible;
     content: "Pleas enter the location you want to know it's weather. :)";
-    color: rgb(0, 0, 0);
+    color: rgb(43, 43, 43);
     position: absolute;
     top: 0;
-    text-align: center;
 }
   
 /*--------------Temperature---------------------*/
@@ -182,9 +186,6 @@ h1.temp {
 }
   
 /*--------Icons---------*/
-.div-table {
-    height: 100%;
-}
 
 .div-row {
     display: table-row;
@@ -237,7 +238,6 @@ h1.temp {
     color: #858383;
 }
 
-
 .backdrop-container .closebtn {
     color: black;
 }
@@ -251,7 +251,35 @@ h1.temp {
     text-align: left;
 }
 
+/*---More info things----*/
 .sunset, .sunrise {
-    background-color: inherit;
+    background-color: transparent;
 }
 
+/*-----------Offconvas-------------*/
+.dropdown-item {
+    width: auto;
+}
+
+.btn-primary {
+    --bs-btn-active-bg: #5c5c5c7a;
+    --bs-btn-active-border-color: transparent;
+}
+
+/*-----------Dropdown-------------*/
+.btn-primary {
+    background-color: transparent;
+    border: none;
+    color: inherit;/*---May be this work for elemnts in main card too!----*/
+}
+
+.btn-primary:hover {
+    text-shadow: 2px rgb(59, 59, 59);
+    background-color: transparent;
+    border: none;
+}
+
+.card {
+    background-color: #fffefeec;
+    color: inherit;
+}
