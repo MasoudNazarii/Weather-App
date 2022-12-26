@@ -7,8 +7,6 @@ style.innerHTML = `
     `;
 document.head.appendChild(style);
 
-
-
 let weather = {
     fetchWeather: function (city) {
         fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + config.apiKey)
@@ -33,13 +31,14 @@ let weather = {
         document.querySelector(".feels_like").innerText = "Feels like " + Math.round(feels_like) + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + Math.round(speed) + "km/h";
-        
+        document.querySelector(".sunrise").innerText = "Sunrise time: " + Sunrise.toUTCString();
+        document.querySelector(".sunset").innerText = "Sunset time: " + Sunset.toUTCString();
+
         document.querySelector(".weather").classList.remove("loading")
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
-    },
-    
+    },    
 };
 
 document.querySelector(".search button").addEventListener("click", function () {
@@ -52,6 +51,16 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
     }
 });
 
+/* 
+    skycon: function setIcons(data, iconID) {
+        const {description} = data.weather[0]
+        const skycons = new Skycons({"color": "white"});
+        const currentIcon = description.replace(/ /g, "_").toUpperCase();
+        skycons.play();
+        skycons.set(iconID, Skycons[currentIcon]);
+        skycons.add(document.getElementById(".icon"));
+    },
+*/
 
 // Change Theme
 const checkbox = document.querySelector(".checkbox");
@@ -59,7 +68,7 @@ const gradient = document.querySelector(".gradient");
 const label = document.querySelector(".label");
 const moon = document.querySelector(".moon");
 const sun = document.querySelector(".sun");
-const card = document.querySelector(".card");
+const mainCard = document.querySelector(".main-card");
 const searchButton = document.querySelector(".search-button");
 const searchBar = document.querySelector(".search-bar");
 const searchBarHover = document.querySelector(".search-button");
@@ -67,26 +76,18 @@ const loading = document.querySelector(".loading");
 const placeholder = document.querySelector(".search-bar");
 const backdrop = document.querySelector(".backdrop-container");
 const closeButton = document.querySelector(".closebtn");
+const card = document.querySelector(".card");
 
 checkbox.addEventListener("click", function() {
     gradient.classList.toggle("gradient-dark");
     label.classList.toggle("label-dark");
     moon.classList.toggle("moon-sun-dark");
     sun.classList.toggle("moon-sun-dark");
-	card.classList.toggle("card-dark");
+	mainCard.classList.toggle("main-card-dark");
     searchButton.classList.toggle("search-button-dark");
     searchBar.classList.toggle("search-bar-dark");
     searchBarHover.classList.toggle("search-hover-dark");
     loading.classList.toggle("loading-dark");
     placeholder.classList.toggle("placeholder-dark");
-    backdrop.classList.toggle("backdrop-container-dark");
-    closeButton.classList.toggle("closebtn-dark");
+    card.classList.toggle("card-dark");
 });
-
-
-
-
-
-
-
-
