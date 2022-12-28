@@ -13,6 +13,7 @@ body {
     position: relative;
 }
 
+
 /* ------------background animation------------------ */
 .gradient {
     background-color: black;
@@ -91,10 +92,6 @@ body {
     transition: background-color.3s;
     padding: 1.5em;
     border-radius: 10px;
-    width: 100%;
-    max-width: 650px;
-    max-height: 350px;
-    height: 100%;
     margin: 0 auto;
     color: rgb(43, 43, 43);
     visibility: visible;
@@ -175,7 +172,7 @@ h1.temp {
     position: absolute;
     display: flex;
     align-items: center;
-    top: 55%;
+    top: 45%;
     left: 50%;
     font-size: large;
 }
@@ -283,3 +280,6 @@ h1.temp {
     background-color: #fffefeec;
     color: inherit;
 }
+
+
+
