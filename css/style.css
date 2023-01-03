@@ -13,7 +13,6 @@ body {
     position: relative;
 }
 
-
 /* ------------background animation------------------ */
 .gradient {
     background-color: black;
@@ -167,19 +166,23 @@ h1.temp {
 .temp {
     font-size: 30px;
 }
-
-.flex {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    top: 45%;
-    left: 50%;
-    font-size: large;
-}
   
 .description {
     text-transform: capitalize;
     margin-left: 8px;
+    white-space: nowrap;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    font-size: large;
+}
+
+.icon {
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    width: 80px;
+    height: auto;
 }
   
 /*--------Icons---------*/
