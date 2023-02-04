@@ -87,7 +87,7 @@ body {
 /*-------------------Main Weather Info Search bar ---------------------------*/
 .main-card {
     position: absolute;
-    background-color: #fffefe8f;
+    background-color: #fffefe46;
     transition: background-color.3s;
     padding: 1.5em;
     border-radius: 10px;
@@ -95,9 +95,10 @@ body {
     color: rgb(43, 43, 43);
     visibility: visible;
     backdrop-filter: blur(15rem);
-    line-height: 35px;
+    line-height: 36.5px;
     top: 15%;
     left: 25%;
+    height: auto;
 }
 
 /*-------------Search bar------------------*/
@@ -271,6 +272,7 @@ h1.temp {
     background-color: transparent;
     border: none;
     color: inherit;/*---May be this work for elemnts in main card too!----*/
+    padding-left: 0;
 }
 
 .btn-primary:hover {
@@ -283,6 +285,5 @@ h1.temp {
     background-color: #fffefeec;
     color: inherit;
 }
-
 
 
