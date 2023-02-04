@@ -9,7 +9,7 @@ document.head.appendChild(style);
 
 let weather = {
     fetchWeather: function (city) {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + config.apiKey)
+        fetch("https://api.openweathermap.org/data/3.0/weather?q=" + city + "&units=metric&appid=" + config.apiKey)
 
         .then((response) => response.json())
         .then((data) => this.displayWeather(data));
@@ -20,10 +20,9 @@ let weather = {
         const {temp, feels_like, humidity} = data.main
         const {speed} = data.wind
         const {sunrise, sunset} = data.sys
-        
+
         const Sunrise = new Date(sunrise);
         const Sunset = new Date(sunset);
-        
         
         document.querySelector(".icon").src ="../icons/weather-icons-master/production/line/openweathermap/" + icon + ".svg";
         document.querySelector(".city").innerText = "Weather in " + name;
@@ -32,9 +31,8 @@ let weather = {
         document.querySelector(".feels_like").innerText = "Feels like " + Math.round(feels_like) + "°C";
         document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText = "Wind speed: " + Math.round(speed) + "km/h";
-        document.querySelector(".sunrise").innerText = "Sunrise time: " + Sunrise.toUTCString();
+        document.querySelector(".sunrise").innerText = "Sunrise time: " + Sunrise;
         document.querySelector(".sunset").innerText = "Sunset time: " + Sunset.toUTCString();
-
         document.querySelector(".weather").classList.remove("loading")
     },
     search: function () {
