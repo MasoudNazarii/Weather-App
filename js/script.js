@@ -9,7 +9,7 @@ document.head.appendChild(style);
 
 let weather = {
     fetchWeather: function (city) {
-        fetch("https://api.openweathermap.org/data/3.0/weather?q=" + city + "&units=metric&appid=" + config.apiKey)
+        fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + config.apiKey)
 
         .then((response) => response.json())
         .then((data) => this.displayWeather(data));
