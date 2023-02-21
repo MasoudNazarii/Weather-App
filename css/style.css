@@ -286,4 +286,12 @@ h1.temp {
     color: inherit;
 }
 
+.logo {
+    height: auto;
+    width: 25%;
+}
 
+.logo:hover {
+    height: auto;
+    width: 25%;
+}
