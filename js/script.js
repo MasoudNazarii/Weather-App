@@ -24,7 +24,7 @@ let weather = {
         const Sunrise = new Date(sunrise);
         const Sunset = new Date(sunset);
         
-        document.querySelector(".icon").src ="../icons/weather-icons-master/production/line/openweathermap/" + icon + ".svg";
+        document.querySelector(".icon").src ="/Weather-App/icons/weather-icons-master/production/line/openweathermap/" + icon + ".svg";
         document.querySelector(".city").innerText = "Weather in " + name;
         document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = Math.round(temp) + "°C";
