@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Images from '../images';
 
 export default function Navbar() {
     return(
@@ -18,9 +18,9 @@ export default function Navbar() {
                 <a className="navbar-brand" href="#">
                 <img
                     className="logo"
-                    src="/Weather-App/images/New-Project.png"
-                    onmouseover="this.src='/Weather-App/images/New-Project-light.png';"
-                    onmouseout="this.src='/Weather-App/images/New-Project.png';"
+                    src={Images.NewProjectpng}
+                    // onmouseover={{src=Images.NewProjectLightpng}}
+                    // onmouseout="this.src='/Weather-App/images/New-Project.png';"
                     alt="logo"
                 />
                 </a>
