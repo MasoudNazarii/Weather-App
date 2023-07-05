@@ -4,11 +4,13 @@ import Search from "./Search";
 import Weather from "./Weather";
 
 export default function MainCard() {
-    return(
-        <>
-            <Theme />
-            <Search />
-            <Weather />
-        </>
-    );
+  return (
+    <>
+      <div className="main-card">
+        <Theme />
+        <Search />
+        <Weather />
+      </div>
+    </>
+  );
 }
