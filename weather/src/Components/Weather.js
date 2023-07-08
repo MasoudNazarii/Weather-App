@@ -1,24 +1,35 @@
 import React, { useState } from "react";
-import { Drop } from "./Icons";
-import { Wind } from "./Icons";
-// import Search from "./Search";
-// import Axios from 'axios';
-// import config from './APIKey';
+import { Drop, Wind, SearchIco } from "./Icons";
+import Axios from 'axios';
+import config from './APIKey';
 
 
 export default function Weather() {
-    // const [result, setResult] = useState({});
+    const [result, setResult] = useState({});
+    const [cityName, setCityName] = useState("");
 
-    // const fetchAPI=() =>{
-    //     Axios.get(
-    //         `https://api.openweathermap.org/data/2.5/weather?q=$(Search.cityName)&units=metric&appid=$(config.apiKey)`
-    //         ).then((Response)=>{
-    //         setResult(Response.data)
-    //     })
-    // }
+    const fetchAPI=() =>{
+        Axios.get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${config.apiKey}`
+            ).then((Response)=>{
+            setResult(Response.data)
+            console.log(cityName);
+        })
+    }
 
     return(
         <>
+            <div className="search">
+                <input type="text" 
+                        className="search-bar" 
+                        placeholder="Search" 
+                        onChange={(event)=> setCityName(event.target.value)}
+                />
+                <button className="search-button"
+                        onClick={fetchAPI}>
+                    <SearchIco />
+                </button>
+            </div>
             <div className="weather loading">
                 <h1 className="city" />
                 <div className="temp" />
