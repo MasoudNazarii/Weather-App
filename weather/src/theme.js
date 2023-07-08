@@ -10,8 +10,6 @@ const searchBar = document.querySelector(".search-bar");
 const searchBarHover = document.querySelector(".search-button");
 const loading = document.querySelector(".loading");
 const placeholder = document.querySelector(".search-bar");
-const backdrop = document.querySelector(".backdrop-container");
-const closeButton = document.querySelector(".closebtn");
 const card = document.querySelector(".card");
 
 checkbox.addEventListener("click", function() {
