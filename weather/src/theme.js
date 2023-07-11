@@ -14,14 +14,14 @@ const card = document.querySelector(".card");
 
 checkbox.addEventListener("click", function() {
     gradient.classList.toggle("gradient-dark");
-    label.classList.toggle("label-dark");
-    moon.classList.toggle("moon-sun-dark");
-    sun.classList.toggle("moon-sun-dark");
-	mainCard.classList.toggle("main-card-dark");
-    searchButton.classList.toggle("search-button-dark");
-    searchBar.classList.toggle("search-bar-dark");
-    searchBarHover.classList.toggle("search-hover-dark");
-    loading.classList.toggle("loading-dark");
-    placeholder.classList.toggle("placeholder-dark");
-    card.classList.toggle("card-dark");
+	// mainCard.classList.toggle("main-card-dark");
+    // label.classList.toggle("label-dark");
+    // moon.classList.toggle("moon-sun-dark");
+    // sun.classList.toggle("moon-sun-dark");
+    // searchButton.classList.toggle("search-button-dark");
+    // searchBar.classList.toggle("search-bar-dark");
+    // searchBarHover.classList.toggle("search-hover-dark");
+    // loading.classList.toggle("loading-dark");
+    // placeholder.classList.toggle("placeholder-dark");
+    // card.classList.toggle("card-dark");
 });
