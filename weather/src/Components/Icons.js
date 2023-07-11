@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useContext} from "react";
+import { ThemeContext } from "./MainCard";
 
 export function Drop() {
     return(
@@ -67,10 +68,11 @@ export function SearchIco() {
 }
 
 export function Sun() {
+    const isDarkMode = useContext(ThemeContext);
     return(
         <>
             <svg
-                className="sun"
+                className={isDarkMode ? "sun moon-sun-dark" : "sun"}
                 stroke="currentColor"
                 fill="none"
                 strokeWidth={2}
@@ -96,10 +98,11 @@ export function Sun() {
 }
 
 export function Moon() {
+    const isDarkMode = useContext(ThemeContext);
     return(
         <>
             <svg
-                className="moon"
+                className={isDarkMode ? "moon moon-sun-dark" : "moon"}
                 stroke="currentColor"
                 fill="none"
                 strokeWidth={2}
