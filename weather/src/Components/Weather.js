@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import WeatherIcons from "../icons/weather-icons-master/production/line/openweathermap/index.js";
 import { Drop, Wind, SearchIco } from "./Icons";
 import Axios from 'axios';
 import config from './APIKey';
-import WeatherIcons from "../icons/weather-icons-master/production/line/openweathermap/index.js";
+import { ThemeContext } from "./MainCard";
+
 
 export default function Weather() {
     const [result, setResult] = useState({});
@@ -10,7 +12,6 @@ export default function Weather() {
     const [show, setShow] = useState(false);
     const [icon, setIcon] = useState("");
     const [description, setDescription] = useState('');
-    
     
     const fetchAPI=() =>{
         Axios.get(
@@ -25,7 +26,7 @@ export default function Weather() {
             })
         
     }
-    
+
     const handelKeyDown = (event) => {
         if (event.key === 'Enter') {
             fetchAPI();
@@ -33,30 +34,29 @@ export default function Weather() {
     }
     const sunriseTime = new Date(result?.sys?.sunrise * 1000).toLocaleTimeString();
     const sunsetTime = new Date(result?.sys?.sunset * 1000).toLocaleTimeString();
+    const isDarkMode = useContext(ThemeContext);
 
-    const iconFilename = icon ? `wi-${icon}.svg` : '';
-
-        return(
+    return(
             <>
             <div className="search">
                 <input type="text" 
-                        className="search-bar" 
+                        className={isDarkMode ? "search-bar search-bar-dark placeholder-dark" : "search-bar"}
                         placeholder="Search" 
                         onChange={(event)=> setCityName(event.target.value)}
                         onKeyDown={handelKeyDown}
                 />
-                <button className="search-button"
+                <button className={isDarkMode ? "search-button search-button-dark search-hover-dark" : "search-button"}
                         onClick={fetchAPI}>
                     <SearchIco />
                 </button>
             </div>
-            <div className={show? "weather" : "weather loading"}>
+            <div className={show? "weather" : "weather loading" && isDarkMode ? "loading-dark weather loading" : "weather loading"}>
                 <h1 className="city">Weather in {result?.name}</h1>
                 <div className="temp">{Math.round(result?.main?.temp)}°C</div>
                <div className="feels_like">Feels like {Math.round(result?.main?.feels_like)}°C</div>
-               <img 
-                    src={WeatherIcons[iconFilename]} 
-                    alt="Icon" />
+               <img className="icon"
+                    src=""
+                    alt={icon} />
                 <div className="description">{description}</div>
                 <div className="div-table">
                     <div className="div-row">
@@ -83,7 +83,7 @@ export default function Weather() {
                     </button>
                 </p>
                 <div className="collapse" id="collapseExample">
-                    <div className="card card-body">
+                    <div className={isDarkMode ? "card card-dark card-body" : "card card-body"}>
                     <div className="sunrise">Sunrise time: {sunriseTime}</div>
                     <div className="sunset">Sunset time: {sunsetTime}</div>
                     <div className="date">{result?.timezone}</div>
