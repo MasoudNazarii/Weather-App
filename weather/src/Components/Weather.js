@@ -4,7 +4,7 @@ import { Drop, Wind, SearchIco } from "./Icons";
 import Axios from 'axios';
 import config from './APIKey';
 import { ThemeContext } from "./MainCard";
-
+import '../icons/weather-icons-master/production/line/openweathermap/01d.svg'
 
 export default function Weather() {
     const [result, setResult] = useState({});
@@ -36,6 +36,8 @@ export default function Weather() {
     const sunsetTime = new Date(result?.sys?.sunset * 1000).toLocaleTimeString();
     const isDarkMode = useContext(ThemeContext);
 
+    const iconPath = WeatherIcons[icon];
+
     return(
             <>
             <div className="search">
@@ -55,7 +57,7 @@ export default function Weather() {
                 <div className="temp">{Math.round(result?.main?.temp)}°C</div>
                <div className="feels_like">Feels like {Math.round(result?.main?.feels_like)}°C</div>
                <img className="icon"
-                    src=""
+                    src={iconPath}
                     alt={icon} />
                 <div className="description">{description}</div>
                 <div className="div-table">
