@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Images from '../images';
 
 export default function Navbar() {
+
+
     return(
         <>
         <nav className="navbar navbar-dark bg-transparent fixed-top">
@@ -15,12 +17,10 @@ export default function Navbar() {
                 >
                 <span className="navbar-toggler-icon" />
                 </button>
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="">
                 <img
                     className="logo"
                     src={Images.NewProjectpng}
-                    // onmouseover={{src=Images.NewProjectLightpng}}
-                    // onmouseout="this.src='/Weather-App/images/New-Project.png';"
                     alt="logo"
                 />
                 </a>
