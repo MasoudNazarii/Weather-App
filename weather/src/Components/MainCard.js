@@ -1,6 +1,4 @@
 import React,{useState, createContext} from "react";
-// import Search from "./Search";
-// import { ThemeContext } from "./Theme";
 import Weather from "./Weather";
 import { Sun, Moon } from "./Icons";
 
@@ -11,6 +9,12 @@ export default function MainCard() {
 
     const handleThemeChange = () => {
         setIsDarkMode(!isDarkMode);
+        if (isDarkMode === true) {
+          document.body.classList.remove('gradient-dark')
+        }
+        else {
+          document.body.classList.add('gradient-dark')
+        }
     };
   
   return (
@@ -31,7 +35,6 @@ export default function MainCard() {
                   <div className="ball" />
               </label>
           </div>
-          {/* <Search /> */}
           <Weather />
         </div>
       </ThemeContext.Provider>
