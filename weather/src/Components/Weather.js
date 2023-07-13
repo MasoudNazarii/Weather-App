@@ -4,7 +4,7 @@ import { Drop, Wind, SearchIco } from "./Icons";
 import Axios from 'axios';
 import config from './APIKey';
 import { ThemeContext } from "./MainCard";
-import '../icons/weather-icons-master/production/line/openweathermap/01d.svg'
+import testicon from "../icons/weather-icons-master/production/line/openweathermap/01d.svg";
 
 export default function Weather() {
     const [result, setResult] = useState({});
@@ -57,7 +57,7 @@ export default function Weather() {
                 <div className="temp">{Math.round(result?.main?.temp)}°C</div>
                <div className="feels_like">Feels like {Math.round(result?.main?.feels_like)}°C</div>
                <img className="icon"
-                    src={iconPath}
+                    src={testicon}
                     alt={icon} />
                 <div className="description">{description}</div>
                 <div className="div-table">
