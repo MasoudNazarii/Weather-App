@@ -97,9 +97,9 @@ body {
   backdrop-filter: blur(15rem);
   line-height: 36.5px;
   top: 20%;
-  left: 20%;
-  height: 50%;
-  width: 50%;
+  left: 18%;
+  width: 55%;
+  height: auto;
 }
 
 /*-------------Search bar------------------*/
@@ -156,7 +156,8 @@ input.search-bar {
   content: "Pleas enter the location you want to know it's weather. :)";
   color: rgb(43, 43, 43);
   position: absolute;
-  top: 0;
+  top: 1%;
+  left: 1%;
 }
 
 /*--------------Temperature---------------------*/
@@ -171,7 +172,8 @@ h1.temp {
 
 .description {
   text-transform: capitalize;
-  margin-left: 8px;
+  margin-left: 2em;
+  margin-top: 1em;
   white-space: nowrap;
   position: absolute;
   top: 55%;
