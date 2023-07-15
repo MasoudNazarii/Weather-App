@@ -96,7 +96,7 @@ body {
   visibility: visible;
   backdrop-filter: blur(15rem);
   line-height: 36.5px;
-  top: 20%;
+  top: 12%;
   left: 18%;
   width: 55%;
   height: auto;
@@ -285,7 +285,7 @@ h1.temp {
 }
 
 .card {
-  background-color: #fffefeec;
+  background-color: #e2e2e2ec;
   color: inherit;
 }
 
