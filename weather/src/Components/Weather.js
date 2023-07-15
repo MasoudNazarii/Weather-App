@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import WeatherIcons from "../icons/weather-icons-master/production/line/openweathermap/index.js";
 import { Drop, Wind, SearchIco } from "./Icons";
 import Axios from 'axios';
 import config from './APIKey';
 import { ThemeContext } from "./MainCard";
-import testicon from "../icons/weather-icons-master/production/line/openweathermap/01d.svg";
+import WeatherIcons from "../icons/weather-icons-master/production/line/openweathermap";
+
 
 export default function Weather() {
     const [result, setResult] = useState({});
@@ -13,30 +13,32 @@ export default function Weather() {
     const [icon, setIcon] = useState("");
     const [description, setDescription] = useState('');
     
-    const fetchAPI=() =>{
+    const fetchAPI = () => {
         Axios.get(
             `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${config.apiKey}`
-            ).then((Response)=>{
-                setResult(Response.data)
-                setShow(true);
-                setIcon(Response.data['weather'][0]['icon']);
-                setDescription(Response.data['weather'][0]['description']);
-                console.log(icon);
-                console.log(description);
-            })
+        ).then((Response)=>{
+            setResult(Response.data)
+            setShow(true);
+            setIcon(Response.data['weather'][0]['icon'].split('').reverse().join(''));
+            setDescription(Response.data['weather'][0]['description']);
+            
+        });
         
-    }
-
+        console.log(icon);
+    };
+    
     const handelKeyDown = (event) => {
         if (event.key === 'Enter') {
             fetchAPI();
         }
     }
+    
+
     const sunriseTime = new Date(result?.sys?.sunrise * 1000).toLocaleTimeString();
     const sunsetTime = new Date(result?.sys?.sunset * 1000).toLocaleTimeString();
     const isDarkMode = useContext(ThemeContext);
 
-    const iconPath = WeatherIcons[icon];
+    const iconPath = WeatherIcons.icon;
 
     return(
             <>
@@ -57,7 +59,7 @@ export default function Weather() {
                 <div className="temp">{Math.round(result?.main?.temp)}°C</div>
                <div className="feels_like">Feels like {Math.round(result?.main?.feels_like)}°C</div>
                <img className="icon"
-                    src={testicon}
+                    src={iconPath}
                     alt={icon} />
                 <div className="description">{description}</div>
                 <div className="div-table">
@@ -81,7 +83,7 @@ export default function Weather() {
                     aria-expanded="false"
                     aria-controls="collapseExample"
                     >
-                    Click Here More Info
+                    Click For More Info
                     </button>
                 </p>
                 <div className="collapse" id="collapseExample">
