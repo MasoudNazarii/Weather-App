@@ -1,25 +1,19 @@
 
-
-
-const WeatherIcons = {
-    d10: require('./01d.svg'),
-    n10: require('./01n.svg'),
-    d20: require('./02d.svg'),
-    n20: require('./02n.svg'),
-    d30: require('./03d.svg'),
-    n30: require('./03n.svg'),
-    d40: require('./04d.svg'),
-    n40: require('./04n.svg'),
-    d90: require('./09d.svg'),
-    n90: require('./09n.svg'),
-    d01: require('./10d.svg'),
-    n01: require('./10n.svg'),
-    d11: require('./11d.svg'),
-    n11: require('./11n.svg'),
-    d31: require('./13d.svg'),
-    n31: require('./13n.svg'),
-    d05: require('./50d.svg'),
-    n05: require('./50n.svg'),
-}
-  
-  export default WeatherIcons;
+export const d10 = require('./01d.svg');
+export const n10 = require('./01n.svg');
+export const d20 = require('./02d.svg');
+export const n20 = require('./02n.svg');
+export const d30 = require('./03d.svg');
+export const n30 = require('./03n.svg');
+export const d40 = require('./04d.svg');
+export const n40 = require('./04n.svg');
+export const d90 = require('./09d.svg');
+export const n90 = require('./09n.svg');
+export const d01 = require('./10d.svg');
+export const n01 = require('./10n.svg');
+export const d11 = require('./11d.svg');
+export const n11 = require('./11n.svg');
+export const d31 = require('./13d.svg');
+export const n31 = require('./13n.svg');
+export const d05 = require('./50d.svg');
+export const n05 = require('./50n.svg');
