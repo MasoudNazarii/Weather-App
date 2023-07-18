@@ -1,10 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect} from "react";
 import { Drop, Wind, SearchIco } from "./Icons";
 import Axios from 'axios';
 import config from './APIKey';
 import { ThemeContext } from "./MainCard";
 import { d10, n10, d20, n20, d30, n30, d40, n40, d90, n90, d01, n01, d11, n11, d31, n31, d05, n05 } from "../icons/weather-icons-master/production/line/openweathermap/index.js";
-
 
 export default function Weather() {
     const [result, setResult] = useState({});
@@ -12,7 +11,7 @@ export default function Weather() {
     const [show, setShow] = useState(false);
     const [icon, setIcon] = useState("");
     const [description, setDescription] = useState('');
-    const [iconPath, setIconPath] = useState();
+    const [iconPath, setIconPath] = useState("");
     
     const fetchAPI = () => {
         Axios.get(
@@ -22,17 +21,18 @@ export default function Weather() {
             setShow(true);
             setIcon(Response.data['weather'][0]['icon'].split('').reverse().join(''));
             setDescription(Response.data['weather'][0]['description']);
+        }).catch((error) => {
+            console.log(error);
         });
-        
-        console.log(icon);
-        console.log(iconPath);
-        console.log(WeatherIcons);
+    };
+    const WeatherIcons = {
+        d10, n10, d20, n20, d30, n30, d40, n40, d90, n90, d01, n01, d11, n11, d31, n31 ,d05 , n05
     };
     useEffect(() => {
-        if (icon) {
-          setIconPath(WeatherIcons[icon]);
-        }
-      }, [icon]);
+        const iconValue = WeatherIcons[icon];
+        const iconPathValue = iconValue ? iconValue.default : "";
+        setIconPath(iconPathValue);
+    }, [icon, WeatherIcons]);
     
     const handelKeyDown = (event) => {
         if (event.key === 'Enter') {
@@ -40,32 +40,9 @@ export default function Weather() {
         }
     }
     
-    const WeatherIcons = {
-        d10,
-        n10,
-        d20,
-        n20,
-        d30,
-        n30,
-        d40,
-        n40,
-        d90,
-        n90,
-        d01,
-        n01,
-        d11,
-        n11,
-        d31,
-        n31,
-        d05,
-        n05,
-};
-
     const sunriseTime = new Date(result?.sys?.sunrise * 1000).toLocaleTimeString();
     const sunsetTime = new Date(result?.sys?.sunset * 1000).toLocaleTimeString();
-    const isDarkMode = useContext(ThemeContext);
-
-    
+    const isDarkMode = useContext(ThemeContext);    
 
     return(
             <>
@@ -87,7 +64,8 @@ export default function Weather() {
                <div className="feels_like">Feels like {Math.round(result?.main?.feels_like)}°C</div>
                <img className="icon"
                     src={iconPath}
-                    alt={icon} />
+                    alt={icon}
+                     />
                 <div className="description">{description}</div>
                 <div className="div-table">
                     <div className="div-row">
