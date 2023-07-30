@@ -3,7 +3,6 @@ import Images from '../images';
 
 export default function Navbar() {
 
-
     return(
         <>
         <nav className="navbar navbar-dark bg-transparent fixed-top">
@@ -49,7 +48,7 @@ export default function Navbar() {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="https://masoudnazarii.github.io/Portfolio/">
                                 About
                                 </a>
                             </li>
