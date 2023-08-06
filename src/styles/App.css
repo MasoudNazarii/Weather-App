@@ -293,3 +293,16 @@ h1.temp {
   height: auto;
   width: 25%;
 }
+
+@media screen and (max-width: 767px) {
+  .main-card {
+    width: 75%;
+    left: 8%;
+  }
+  .description {
+    font-size: medium;
+  }
+  .icon {
+    width: 60px;
+  }
+}
