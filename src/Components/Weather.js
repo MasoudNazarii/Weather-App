@@ -95,7 +95,6 @@ export default function Weather() {
                     <div className={isDarkMode ? "card card-dark card-body" : "card card-body"}>
                     <div className="sunrise">Sunrise time: {sunriseTime}</div>
                     <div className="sunset">Sunset time: {sunsetTime}</div>
-                    <div className="date">{result?.timezone}</div>
                     </div>
                 </div>
             </div>
