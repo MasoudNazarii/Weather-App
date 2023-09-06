@@ -22,7 +22,12 @@ export default function Weather() {
             setIcon(Response.data['weather'][0]['icon'].split('').reverse().join(''));
             setDescription(Response.data['weather'][0]['description']);
         }).catch((error) => {
-            console.log(error);
+            // console.log(error);
+            if(error == "AxiosError: Request failed with status code 404"){
+                alert("City Not Found!, Pleas make sure you write city name correctly.");
+            }else{
+                alert("Something went wrong!, Pleas try agian.");
+            }
         });
     };
     const WeatherIcons = {
@@ -65,7 +70,7 @@ export default function Weather() {
                <img className="icon"
                     src={iconPath}
                     alt={icon}
-                     />
+                />
                 <div className="description">{description}</div>
                 <div className="div-table">
                     <div className="div-row">
