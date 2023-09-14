@@ -6,16 +6,16 @@ export const ThemeContext = createContext();
 
 export default function MainCard() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-    const handleThemeChange = () => {
-        setIsDarkMode(!isDarkMode);
-        if (isDarkMode === true) {
-          document.body.classList.remove('gradient-dark')
-        }
-        else {
-          document.body.classList.add('gradient-dark')
-        }
-    };
+  
+  const handleThemeChange = () => {
+      setIsDarkMode(!isDarkMode);
+      if (isDarkMode === true) {
+        document.body.classList.remove('gradient-dark')
+      }
+      else {
+        document.body.classList.add('gradient-dark')
+      }
+  };
   
   return (
     <>

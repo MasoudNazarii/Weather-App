@@ -16,7 +16,7 @@ export default function Navbar() {
                 >
                 <span className="navbar-toggler-icon" />
                 </button>
-                <a className="navbar-brand" href="">
+                <a className="navbar-brand" href="https://masoudnazarii.github.io/Portfolio/">
                 <img
                     className="logo"
                     src={Images.NewProjectpng}
