@@ -308,6 +308,18 @@ h1.temp {
   }
   .icon {
     width: 60px;
-    left: 60%;
+    left: 50%;
   }
+  .Earth {
+    top: 60% !important;
+    left: 25% !important;
+    width: 50%;
+    height: 40%;
+  }
+}
+
+.Earth {
+  position: absolute;
+  top: 30%;
+  left: 71%;
 }
