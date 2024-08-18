@@ -10,8 +10,7 @@ function App() {
   return (
     <>
 		<Navbar />
-    <iframe className='Earth' src='https://my.spline.design/untitled-acb7e6c4af18e696bb86444ce0386952/' frameborder='0' width='30%' height='30%'></iframe>
-    
+    <iframe className='Earth' src='https://my.spline.design/untitled-acb7e6c4af18e696bb86444ce0386952/' frameBorder='0' width='30%' height='30%'></iframe>
 		<MainCard />
     </>
   );
